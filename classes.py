@@ -1,3 +1,5 @@
+import random
+
 class Tablero:
     puntuacion: int
 
@@ -13,7 +15,19 @@ class Tablero:
         return self.puntuacion
     
     # Metodo
-    #TODO: Randomizar los simbolos
+    def randomizarEmojis():
+        emojis = ['😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😇', '😉', '😊', '🙂', '🙃', '👻', '💀', '🥵', '👽', '🤖']
+        listaRes = list()
+        lista = list(range(0,36))
+        random.shuffle(lista)
+
+        for i in lista:
+            if i>17:
+                listaRes.append(emojis[35-i])
+            else:
+                listaRes.append(emojis[i])
+        print(listaRes)
+
     # def crearTablero(self, tamanio_tablero: int):
         
 
