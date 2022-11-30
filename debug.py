@@ -1,9 +1,14 @@
-import pprint
-import Tablero
+from Casilla import Casilla
 
-tablero = Tablero()
+casilla = Casilla()
+print(casilla.get_es_visible())
+print(casilla.get_simbolo())
+print(casilla.get_esta_seleccionada())
 
-pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(Tablero.Tablero.crearTablero(tablero,6))
+casilla.set_es_visible(True)
+casilla.set_simbolo('😎')
+casilla.set_es_visible(True)
 
-print(type(Tablero))
+print(casilla.get_es_visible())
+print(casilla.get_simbolo())
+print(casilla.get_esta_seleccionada())
