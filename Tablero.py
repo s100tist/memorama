@@ -3,6 +3,7 @@ import randomizacion
 class Tablero:
     puntuacion:             int
     casilla_seleccionada:   dict
+    casillas:               list[list[any]]
 
     #Constructor
     def __init__(self): 
@@ -19,7 +20,6 @@ class Tablero:
 
 
     def crearTablero(self, tamanio_tablero: int):
-
         #creamos una matriz de 'tamaño' x 'tamaño'
         tab2 = self.__init__
         tab2 = [list(range(tamanio_tablero)) for _ in range(tamanio_tablero)]
