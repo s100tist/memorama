@@ -16,3 +16,14 @@ class Casilla:
     def get_simbolo(self) -> str:
         return self.simbolo
 
+    def set_esta_seleccionada(self,estado: bool) -> None:
+        self.simbolo = estado
+
+    def get_esta_seleccionada(self) -> str:
+        return self.esta_seleccionada
+
+    def set_es_visible(self,estado:bool) -> None:
+        self.es_visible = estado
+
+    def get_es_visible(self) -> str:
+        return self.es_visible
