@@ -3,13 +3,15 @@ from Casilla import Casilla
 
 class Tablero:
     puntuacion:             int
-    casilla_seleccionada:   dict
+    casilla_seleccionada1:   dict
+    casilla_seleccionada2:   dict
     casillas:               list[list[any]]
 
     #Constructor
     def __init__(self): 
         self.puntuacion = 0
         self.casilla_seleccionada = {'x':0,'y':0}
+        self.casilla_seleccionada2 = {'x':0,'y':0}
         self.casillas=[list(range(6)) for _ in range(6)]
 
     #Getters and setters
@@ -40,13 +42,18 @@ class Tablero:
             for j in range(len(self.casillas[0])):
                 if self.casillas[i][j].get_es_visible() == True:
                     print (self.casillas[i][j].get_simbolo(),end="")
+                if (i == self.casilla_seleccionada['x'] and j == self.casilla_seleccionada['y']):
+                    print('⏹️',end="")
                 else:
                     print('🛑',end="")
             print("")
 
-    def cambiarEstadoCasilla(self,coordenadas: dict)->None:{
-        self.casillas[coordenadas['x']][coordenadas['y']].set_es_visible()
-    }
+    def cambiarEstadoCasilla(self,coordenadas: dict)->None:
+        self.casillas[coordenadas['x']][coordenadas['y']].cambiar_visibilidad()
+    
+
+    def rastrearTeclas(tecla:str)->None:
+        print(tecla)
 
         
 
