@@ -1,8 +1,8 @@
 import pprint
-import Tablero
-
-tablero = Tablero()
+from Casilla import Casilla
 
 pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(Tablero.Tablero.crearTablero(tablero,6))
 
+cas = Casilla()
+
+print(cas)
