@@ -9,10 +9,6 @@ class Tablero:
     def __init__(self): 
         self.puntuacion = 0
 
-    #Getters and setters
-    # def __getattribute__(self, __name: str) -> Any:
-    #     pass
-
     def get_puntuacion(self) -> int:
         return self.puntuacion
     
