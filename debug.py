@@ -1,8 +1,14 @@
-import pprint
 from Casilla import Casilla
 
-pp = pprint.PrettyPrinter(indent=4)
+casilla = Casilla()
+print(casilla.get_es_visible())
+print(casilla.get_simbolo())
+print(casilla.get_esta_seleccionada())
 
-cas = Casilla()
+casilla.set_es_visible(True)
+casilla.set_simbolo('😎')
+casilla.set_es_visible(True)
 
-print(cas)
+print(casilla.get_es_visible())
+print(casilla.get_simbolo())
+print(casilla.get_esta_seleccionada())
