@@ -36,10 +36,8 @@ def detectar_tecla():
             break
     return tecla_str
 
-
+os.system(var)
 tablero.imprimirCasillas()
-
-
 while(True):
     sleep(.15)
     print(tablero.get_cursor())
