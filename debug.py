@@ -35,7 +35,7 @@ def detectar_tecla():
             tecla_str = "enter"
             break
     return tecla_str
-
+turno = 0 
 os.system(var)
 tablero.imprimirCasillas()
 while(True):

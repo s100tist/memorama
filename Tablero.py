@@ -49,26 +49,23 @@ class Tablero:
                     print('🛑',end="")
             print("")
 
-    def cambiar_estado_casilla(self,coordenadas: dict, turno: int)->None:
-        #Aqui puse la funcion de comparacion, desde mi perspectiva en este cambiar estado se puede realizar la misma comparación
-        if turno == 1:
-            self.casilla_seleccionada2 = {'x': coordenadas['x'],'y':coordenadas['y']}
-            self.casillas[coordenadas['x']][coordenadas['y']].cambiar_visibilidad()
-        if turno == 2:
-            self.casillas[coordenadas['x']][coordenadas['y']].cambiar_visibilidad()
-            self.comparacion_casillas(coordenadas,self.casilla_seleccionada2)
+    def cambiar_estado_casilla(self,coordenadas: dict)->None:
+        self.casillas[coordenadas['x']][coordenadas['y']].cambiar_visibilidad()
 
     def comparacion_casillas (self, coordenadas_actuales : dict, coordenadas_anteriores: dict)-> None :
         if self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].get_simbolo() == self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].get_simbolo():
-            self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].get_es_visible() == True
-            self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].get_es_visible() == True
             self.puntuacion+=1
         else: 
+
+
+      
             self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].cambiar_visibilidad()
             self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].cambiar_visibilidad()
+        self.casilla_seleccionada1 = {'x':-1,'y':-1}
+        self.casilla_seleccionada2 = {'x':-1,'y':-1}
+
 
     def rastrear_teclas(self,tecla:str)->None:
-        turno_casilla = 0
         coordenada_x = self.cursor['x']
         coordenada_y = self.cursor['y']
         if (tecla == "down" and self.cursor['y'] < 5):
@@ -81,10 +78,13 @@ class Tablero:
             self.cursor['x'] -= 1
         elif tecla == "enter":
             #las coordenadas están invertidas
-            turno_casilla+=1
+            self.casillas[coordenada_y][coordenada_x].cambiar_visibilidad()
+            if self.casilla_seleccionada1['x'] == -1 and self.casilla_seleccionada1['y'] == -1:
+                self.casilla_seleccionada1 = {'x': coordenada_y,'y':coordenada_x}
+            else: 
+                self.casilla_seleccionada2 = {'x': coordenada_y,'y':coordenada_x}
+                self.comparacion_casillas(self.casilla_seleccionada1,self.casilla_seleccionada2)
+
+
             #Condicion de prueba para turnos
-            #if turno_casilla <=2:
-            #    self.casillas[coordenada_y][coordenada_x].cambiar_visibilidad()
-            self.casilla_seleccionada1 = {'x': coordenada_y,'y':coordenada_x}
-            self.cambiar_estado_casilla(self.casilla_seleccionada1,turno_casilla)
-            turno_casilla = 0
+            #self.cambiar_estado_casilla(self.casilla_seleccionada1,turno_casilla)
