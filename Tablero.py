@@ -62,6 +62,7 @@ class Tablero:
         if self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].get_simbolo() == self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].get_simbolo():
             self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].get_es_visible() == True
             self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].get_es_visible() == True
+            self.puntuacion+=1
         else: 
             self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].cambiar_visibilidad()
             self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].cambiar_visibilidad()
