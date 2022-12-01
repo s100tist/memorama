@@ -23,8 +23,8 @@ class Casilla:
     def get_esta_seleccionada(self) -> str:
         return self.esta_seleccionada
 
-    def set_es_visible(self,estado:bool) -> None:
-        self.es_visible = estado
+    def cambiar_visibilidad(self) -> None:
+        self.es_visible = True if self.es_visible == False else False
 
     def get_es_visible(self) -> str:
         return self.es_visible
