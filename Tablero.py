@@ -60,8 +60,8 @@ class Tablero:
 
     def comparacion_casillas (self, coordenadas_actuales : dict, coordenadas_anteriores: dict)-> None :
         if self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].get_simbolo() == self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].get_simbolo():
-            self.casillas[self.casilla_seleccionada['y']][self.casilla_seleccionada['x']].get_es_visible() == True
-            self.casillas[coordenadas_actuales['x']][coordenadas_actuales['x']].get_es_visible() == True
+            self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].get_es_visible() == True
+            self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].get_es_visible() == True
         else: 
             self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].cambiar_visibilidad()
             self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].cambiar_visibilidad()
