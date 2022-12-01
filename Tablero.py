@@ -17,7 +17,6 @@ class Tablero:
         self.cursor = {'x':0,'y':0}
 
 
-
     def get_puntuacion(self) -> int:
         return self.puntuacion
     
