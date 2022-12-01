@@ -23,6 +23,8 @@ class Tablero:
     
     def get_casillas(self)-> list:
         return self.casillas
+    def get_cursor(self)-> dict:
+        return self.cursor
 
     # Metodos
 
@@ -42,7 +44,7 @@ class Tablero:
             for j in range(len(self.casillas[0])):
                 if self.casillas[i][j].get_es_visible() == True:
                     print (self.casillas[i][j].get_simbolo(),end="")
-                elif (i == self.cursor['x'] and j == self.cursor['y']):
+                elif (i == self.cursor['y'] and j == self.cursor['x']):
                     print('⏹️',end="")
                 else:
                     print('🛑',end="")
@@ -55,16 +57,17 @@ class Tablero:
     def rastrear_teclas(self,tecla:str)->None:
         coordenada_x = self.cursor['x']
         coordenada_y = self.cursor['y']
-        if (tecla == "up" and self.cursor['y'] < 5):
+        if (tecla == "down" and self.cursor['y'] < 5):
             self.cursor['y'] += 1
-        elif (tecla == "down" and self.cursor['y']>0):
+        elif (tecla == "up" and self.cursor['y']>0):
             self.cursor['y'] -= 1
         elif (tecla == "right" and self.cursor['x'] < 5):
             self.cursor['x'] += 1
         elif (tecla == "left" and self.cursor['x'] > 0):
             self.cursor['x'] -= 1
         elif tecla == "enter":
-            self.casillas[coordenada_x][coordenada_y].cambiar_visibilidad()
+            #las coordenadas están invertidas
+            self.casillas[coordenada_y][coordenada_x].cambiar_visibilidad()
 
 
         

@@ -37,7 +37,12 @@ def detectar_tecla():
     return tecla_str
 
 
+tablero.imprimirCasillas()
+
+
 while(True):
-    tablero.imprimirCasillas()
+    sleep(.15)
+    print(tablero.get_cursor())
     tablero.rastrear_teclas(detectar_tecla())
-    sleep(0.15)
+    os.system(var)
+    tablero.imprimirCasillas()
