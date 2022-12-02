@@ -26,5 +26,5 @@ class Casilla:
     def cambiar_visibilidad(self) -> None:
         self.es_visible = True if self.es_visible == False else False
 
-    def get_es_visible(self) -> str:
+    def get_es_visible(self) -> bool:
         return self.es_visible

@@ -35,6 +35,8 @@ def detectar_tecla():
             tecla_str = "enter"
             break
     return tecla_str
+tablero.casillas[1][1].set_simbolo('❤')
+tablero.casillas[0][0].set_simbolo('❤')
 turno = 0 
 os.system(var)
 tablero.imprimirCasillas()

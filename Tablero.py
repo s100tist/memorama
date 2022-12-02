@@ -22,6 +22,7 @@ class Tablero:
     
     def get_casillas(self)-> list:
         return self.casillas
+        
     def get_cursor(self)-> dict:
         return self.cursor
 
@@ -39,6 +40,7 @@ class Tablero:
                 conta += 1
 
     def imprimirCasillas(self)->None:
+        print (self.puntuacion)
         for i in range(len(self.casillas)):
             for j in range(len(self.casillas[0])):
                 if self.casillas[i][j].get_es_visible() == True:
@@ -56,9 +58,6 @@ class Tablero:
         if self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].get_simbolo() == self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].get_simbolo():
             self.puntuacion+=1
         else: 
-
-
-      
             self.casillas[coordenadas_actuales['x']][coordenadas_actuales['y']].cambiar_visibilidad()
             self.casillas[coordenadas_anteriores['x']][coordenadas_anteriores['y']].cambiar_visibilidad()
         self.casilla_seleccionada1 = {'x':-1,'y':-1}
@@ -76,7 +75,7 @@ class Tablero:
             self.cursor['x'] += 1
         elif (tecla == "left" and self.cursor['x'] > 0):
             self.cursor['x'] -= 1
-        elif tecla == "enter":
+        elif tecla == "enter" and self.casillas[coordenada_y][coordenada_x].get_es_visible() == False:
             #las coordenadas están invertidas
             self.casillas[coordenada_y][coordenada_x].cambiar_visibilidad()
             if self.casilla_seleccionada1['x'] == -1 and self.casilla_seleccionada1['y'] == -1:
