@@ -2,7 +2,7 @@ import random
  
     # Método para obtener una lista con 18 pares de emojis ordenados de manera aleatoria
 def randomizarEmojis() -> list:
-    emojis = ['😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😇', '😉', '😊', '🙂', '🙃', '👻', '💀', '🥵', '👽', '🤖']
+    emojis = ['🌚', '🌝', '🐸', '🐋', '🐧', '🦈', '🤠', '🦖', '🤡', '🌈', '🍑', '🙂', '🙃', '👻', '💀', '🥵', '👽', '🤖']
     listaRes = list()
      #Creamos una lista que va de 0 a 35 y la "revolvemos"
     lista = list(range(0,36))

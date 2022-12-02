@@ -1,5 +1,12 @@
 import randomizacion
+from time import sleep
 from Casilla import Casilla
+import os
+ 
+if os.name == "posix":
+   var = "clear"       
+elif os.name == "ce" or os.name == "nt" or os.name == "dos":
+   var = "cls"
 
 class Tablero:
     puntuacion:             int
@@ -82,6 +89,9 @@ class Tablero:
                 self.casilla_seleccionada1 = {'x': coordenada_y,'y':coordenada_x}
             else: 
                 self.casilla_seleccionada2 = {'x': coordenada_y,'y':coordenada_x}
+                os.system(var)
+                self.imprimirCasillas()
+                sleep(.5)
                 self.comparacion_casillas(self.casilla_seleccionada1,self.casilla_seleccionada2)
 
 

@@ -2,7 +2,6 @@ import keyboard as kb
 from time import sleep
 from Tablero import Tablero
 import os
-import time 
  
 if os.name == "posix":
    var = "clear"       
@@ -35,14 +34,20 @@ def detectar_tecla():
             tecla_str = "enter"
             break
     return tecla_str
-tablero.casillas[1][1].set_simbolo('❤')
-tablero.casillas[0][0].set_simbolo('❤')
+
+
 turno = 0 
 os.system(var)
 tablero.imprimirCasillas()
-while(True):
+while(tablero.get_puntuacion() <= 3):
     sleep(.15)
     print(tablero.get_cursor())
     tablero.rastrear_teclas(detectar_tecla())
     os.system(var)
     tablero.imprimirCasillas()
+
+os.system(var)    
+print("¡GANASTE! :D")
+sleep(3)
+exit()
+
