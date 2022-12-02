@@ -39,7 +39,7 @@ def detectar_tecla():
 turno = 0 
 os.system(var)
 tablero.imprimirCasillas()
-while(tablero.get_puntuacion() <= 1):
+while(tablero.get_puntuacion() <= 17):
     sleep(.15)
     print(tablero.get_cursor())
     tablero.rastrear_teclas(detectar_tecla())
