@@ -35,18 +35,25 @@ def main():
     #Instanciamos la clase Tablero
     tablero = Tablero()
     tablero.crearTablero(6)
-
     #Limpiamos la pantalla
     os.system(var)
     tablero.imprimirCasillas()
+    print(f"Posición del cursor: {tablero.get_cursor()}")
+    print("\n\nUsa las flechas para moverte en el tablero")
+    print("Presiona enter para desbloquear una casilla")
+    print("El juego termina al encontrar todos los pares de emojis:)")
+        
 
     while(tablero.get_puntuacion() <= 17):
         sleep(.15)
 
-        print(f"Posición del cursor: {tablero.get_cursor()}")
         tablero.rastrear_teclas(detectar_tecla())
         os.system(var)
         tablero.imprimirCasillas()
+        print(f"Posición del cursor: {tablero.get_cursor()}")
+        print("\n\nUsa las flechas para moverte en el tablero")
+        print("Presiona enter para desbloquear una casilla")
+        print("El juego termina al encontrar todos los pares de emojis:)")
 
     os.system(var)    
     print("¡GANASTE! :D")
