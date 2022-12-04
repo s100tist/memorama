@@ -6,13 +6,19 @@ Para poder jugar correctamente el juego necesita descargar las dependencias nece
 
 ## Dependencias
 
-Primero, necesita abrir el ambiente virutal
+Primero, necesita crear el ambiente virtual
+
+```shell
+py -m venv env
+```
+
+Despues activamos el entorno virtual
 
 ```shell
 .\env\Scripts\activate
 ```
 
-Luego instalar las dependencias del ambiente
+Luego instalamos las dependencias del ambiente
 
 ```shell
 py -m pip install -r requirements.txt
