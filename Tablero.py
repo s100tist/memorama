@@ -1,3 +1,4 @@
+import typing
 import randomizacion
 from time import sleep
 from Casilla import Casilla
@@ -13,7 +14,7 @@ class Tablero:
     casilla_seleccionada1:   dict
     casilla_seleccionada2:   dict
     cursor:                  dict
-    casillas:               list[list[any]]
+    casillas:               list[list[typing.Any]]
 
     #Constructor
     def __init__(self): 
@@ -47,7 +48,7 @@ class Tablero:
                 conta += 1
 
     def imprimirCasillas(self)->None:
-        print (self.puntuacion)
+        print(f"Puntuación actual: {self.puntuacion}")
         for i in range(len(self.casillas)):
             for j in range(len(self.casillas[0])):
                 if self.casillas[i][j].get_es_visible() == True:

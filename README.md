@@ -1,2 +1,37 @@
-# memorama
+# Memorama
+
 Memorama para programación funcional
+
+Para poder jugar correctamente el juego necesita descargar las dependencias necesarias
+
+## Dependencias
+
+Primero, necesita abrir el ambiente virutal
+
+```shell
+.\env\Scripts\activate
+```
+
+Luego instalar las dependencias del ambiente
+
+```shell
+py -m pip install -r requirements.txt
+```
+
+Despues correr el siguiente comando
+
+```shell
+pyinstaller --onefile Main.py
+```
+
+Por ultimo para ejecutar el juego ejecutamos el siguiente comando
+
+```shell
+.\dist\Main
+```
+
+Para cerrar el ambiente virtual se ejecuta este comando
+
+```shell
+deactivate
+```

@@ -18,9 +18,9 @@ class Casilla:
         return self.simbolo
 
     def set_esta_seleccionada(self,estado: bool) -> None:
-        self.simbolo = estado
+        self.esta_seleccionada = estado
 
-    def get_esta_seleccionada(self) -> str:
+    def get_esta_seleccionada(self) -> bool:
         return self.esta_seleccionada
 
     def cambiar_visibilidad(self) -> None:
