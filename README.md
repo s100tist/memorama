@@ -1,6 +1,6 @@
 # Memorama
 
-Memorama para programación funcional
+Juego de memorama que corre sobre la terminal, tiene el objetivo de aplicar los conceptos aprendidos en programación funcional.
 
 Para poder jugar correctamente el juego necesita descargar las dependencias necesarias
 
